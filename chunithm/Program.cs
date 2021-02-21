@@ -80,7 +80,9 @@ namespace chunithm
                     float t = FindTeisu(s);
                     if (t == 0)
                     {
-                        Console.Write(s + "が見つかりません。");
+                        Console.WriteLine(s + "が見つかりません。");
+                        Console.WriteLine("何かキーを押して下さい");
+                        Console.ReadKey();
                         return;
                     }
                     else
