@@ -4,7 +4,6 @@ C:\Users\soma6\source\repos\chunithm\chunithm\bin\Debug\netcoreapp3.1\chunithm.r
 C:\Users\soma6\source\repos\chunithm\chunithm\bin\Debug\netcoreapp3.1\chunithm.runtimeconfig.dev.json
 C:\Users\soma6\source\repos\chunithm\chunithm\bin\Debug\netcoreapp3.1\chunithm.dll
 C:\Users\soma6\source\repos\chunithm\chunithm\bin\Debug\netcoreapp3.1\chunithm.pdb
-C:\Users\soma6\source\repos\chunithm\chunithm\obj\Debug\netcoreapp3.1\chunithm.csprojAssemblyReference.cache
 C:\Users\soma6\source\repos\chunithm\chunithm\obj\Debug\netcoreapp3.1\chunithm.AssemblyInfoInputs.cache
 C:\Users\soma6\source\repos\chunithm\chunithm\obj\Debug\netcoreapp3.1\chunithm.AssemblyInfo.cs
 C:\Users\soma6\source\repos\chunithm\chunithm\obj\Debug\netcoreapp3.1\chunithm.csproj.CoreCompileInputs.cache
@@ -17,3 +16,4 @@ C:\CHUNITHM\netcoreapp3.1\chunithm.runtimeconfig.json
 C:\CHUNITHM\netcoreapp3.1\chunithm.runtimeconfig.dev.json
 C:\CHUNITHM\netcoreapp3.1\chunithm.dll
 C:\CHUNITHM\netcoreapp3.1\chunithm.pdb
+C:\Users\soma6\source\repos\chunithm\chunithm\obj\Debug\netcoreapp3.1\chunithm.csproj.AssemblyReference.cache

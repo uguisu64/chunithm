@@ -48,6 +48,7 @@ namespace chunithm
             GameData[] gameDatas = new GameData[teisuDatas.Count];
             bool first = true;
             bool fcajFlg = false;
+            bool skipFlg = false;
             while (sr.Peek() > -1)
             {
                 string s;
@@ -58,7 +59,17 @@ namespace chunithm
                 {
                     s = Extraction(s);
                     Console.Write(s);
-                    
+                    skipFlg = false;
+
+                    float t = FindTeisu(s);
+                    if (t == 0)
+                    {
+                        Console.WriteLine(s + "が見つかりません。");
+                        Console.WriteLine("何かキーを押して下さい");
+                        Console.ReadKey();
+                        skipFlg = true;
+                        continue;
+                    }
 
                     if (first)
                     {
@@ -77,32 +88,21 @@ namespace chunithm
                         fcajFlg = false;
                     }
 
-                    float t = FindTeisu(s);
-                    if (t == 0)
-                    {
-                        Console.WriteLine(s + "が見つかりません。");
-                        Console.WriteLine("何かキーを押して下さい");
-                        Console.ReadKey();
-                        return;
-                    }
-                    else
-                    {
-                        gameDatas[i].teisu = t;
-                    }
+                    gameDatas[i].teisu = t;
                 }
-                if (s.StartsWith("HIGH SCORE：<span class=\"text_b\">"))
+                if (s.StartsWith("HIGH SCORE：<span class=\"text_b\">") && !skipFlg)
                 {
                     s = Extraction(s);
                     Console.WriteLine(highScore(s));
 
                     gameDatas[i].score = highScore(s);
                 }
-                if (s == "<!-- ◆オールジャスティス -->")
+                if (s == "<!-- ◆オールジャスティス -->" && !skipFlg)
                 {
                     fcajFlg = true;
                     gameDatas[i].fcaj = 2;
                 }
-                if (s == "<!-- ◆フルコンボ -->")
+                if (s == "<!-- ◆フルコンボ -->" && !skipFlg)
                 {
                     fcajFlg = true;
                     gameDatas[i].fcaj = 1;
@@ -120,7 +120,7 @@ namespace chunithm
             float ops = 0;
             float maxops = 0;
             int rironti = 0;
-            for(int j = 0; j <= i; j++)
+            for (int j = 0; j <= i; j++)
             {
                 sw.WriteLine(gameDatas[j].title);
                 sw.WriteLine(" 譜面定数:" + gameDatas[j].teisu + "  ハイスコア:" + gameDatas[j].score);
